@@ -4,6 +4,8 @@ import com.example.Voting.System.Assignment.Service.VotingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/voting")
 public class VotingController {
@@ -28,5 +30,10 @@ public class VotingController {
     @GetMapping("/countvote")
     public String countVote(@RequestParam String name) {
         return votingService.countVote(name);
+    }
+
+    @GetMapping("/listvote")
+    public Map<String, Integer> listVotes() {
+        return votingService.listVotes();
     }
 }

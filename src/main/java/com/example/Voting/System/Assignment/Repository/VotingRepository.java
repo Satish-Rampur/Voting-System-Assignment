@@ -35,4 +35,8 @@ public class VotingRepository {
             return "Invalid candidate name!";
         }
     }
+
+    public Map<String, Integer> listVotes() {
+        return candidateVotes;
+    }
 }

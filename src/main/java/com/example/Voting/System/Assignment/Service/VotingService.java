@@ -4,6 +4,8 @@ import com.example.Voting.System.Assignment.Repository.VotingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 @Service
 public class VotingService {
     @Autowired
@@ -23,5 +25,9 @@ public class VotingService {
 
     public String countVote(String name) {
         return votingRepository.countVote(name);
+    }
+
+    public Map<String, Integer> listVotes() {
+        return votingRepository.listVotes();
     }
 }
