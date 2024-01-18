@@ -1,0 +1,100 @@
+Certainly! Below is a documentation outline for the architecture and design of the voting system implemented in the provided Spring Boot project. Feel free to expand and customize this documentation based on the specific details and decisions made in project.
+
+* Voting System Architecture and Design Documentation
+
+* Table of Contents
+1. Introduction
+2. Architecture Overview
+3. Project Structure
+4. Components
+   - Controller Layer
+   - Service Layer
+   - Repository Layer
+   - Model Layer
+5. API Endpoints
+6. Exception Handling
+7. Testing Strategy
+8. Deployment Considerations
+9. Conclusion
+10.References
+
+1. Introduction
+
+The Voting System is a Spring Boot application designed to manage candidate information and facilitate the voting process. This documentation provides an overview of the system's architecture, design decisions, and key components.
+
+2. Architecture Overview
+
+The system follows a basic MVC (Model-View-Controller) architecture:
+
+- **Model:** Represents the data structure of a candidate.
+- **View:** The application does not have a dedicated view layer, as it primarily provides a REST API.
+- **Controller:** Handles HTTP requests, processes input, and interacts with the service layer.
+- **Service:** Contains business logic and acts as an intermediary between the controller and the repository.
+- **Repository:** Manages data storage and retrieval.
+
+3. Project Structure
+
+The project is organized into packages based on functionality:
+
+- `controller`: Contains REST controllers handling HTTP requests.
+- `service`: Implements business logic and coordinates interactions between the controller and repository.
+- `repository`: Manages data storage and retrieval.
+- `model`: Defines the entity representing a candidate.
+
+4. Components
+
+ Controller Layer
+
+The controller layer handles incoming HTTP requests and interacts with the service layer. It is responsible for processing user input, invoking appropriate service methods, and returning responses.
+
+ Service Layer
+
+The service layer contains the business logic of the application. It coordinates operations, validates input, and interacts with the repository for data access. It is designed to be reusable and independent of the presentation layer.
+
+ Repository Layer
+
+The repository layer manages data storage and retrieval. In this implementation, local variables are used instead of a database for simplicity. It contains methods to enter candidates, cast votes, and retrieve voting-related information.
+
+ Model Layer
+
+The model layer defines the structure of a candidate entity. It includes a `Candidate` class representing the candidate's data.
+
+ 5. API Endpoints
+
+The application exposes the following RESTful API endpoints:
+
+- `POST /voting/entercandidate`: Enter a new candidate.
+- `POST /voting/castvote`: Cast a vote for a candidate.
+- `GET /voting/countvote`: Get the vote count for a specific candidate.
+- `GET /voting/listvote`: Get a list of all candidates and their vote counts.
+- `GET /voting/getwinner`: Get the name of the candidate with the highest votes.
+
+ 6. Exception Handling
+
+The application includes basic exception handling to handle scenarios such as invalid candidate names or attempts to vote for non-existent candidates. Exceptions are appropriately caught and translated into user-friendly error messages.
+
+ 7. Testing Strategy
+
+The project includes unit tests using JUnit and Mockito. Tests cover key functionality in the service and controller layers, ensuring the correctness of the implemented features.
+
+ 8. Deployment Considerations
+
+The application can be deployed as a standalone Spring Boot application. Ensure that Java 11 or later is installed on the target environment. The application uses Maven or Gradle for building.
+
+ 9. Conclusion
+
+This documentation provides an overview of the architecture, design decisions, and key components of the Voting System. Future enhancements may include scalability considerations, improved exception handling, and support for persistent data storage.
+
+10. References
+
+- [Spring Boot Documentation](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
+- [JUnit Documentation](https://junit.org/junit5/docs/current/user-guide/)
+- [Mockito Documentation](https://javadoc.io/doc/org.mockito/mockito-core/latest/index.html)
+
+
+
+
+
+
+
+
