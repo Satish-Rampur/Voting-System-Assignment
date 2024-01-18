@@ -1,8 +1,8 @@
-# Voting System
+ Voting System
 
 This is a simple Spring Boot application for a voting system. It allows users to enter candidates, cast votes, and view voting statistics.
 
-# Prerequisites
+ Prerequisites
 
 - Java 11 or later
 - Maven or Gradle for building the project
