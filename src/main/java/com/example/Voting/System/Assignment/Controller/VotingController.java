@@ -22,4 +22,9 @@ public class VotingController {
     public String enterCandidate(@RequestParam String name) {
         return votingService.enterCandidate(name);
     }
+
+    @PostMapping("/castvote")
+    public String castVote(@RequestParam String name) {
+        return votingService.castVote(name);
+    }
 }

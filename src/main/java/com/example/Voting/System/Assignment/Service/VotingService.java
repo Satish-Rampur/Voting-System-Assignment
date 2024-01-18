@@ -16,4 +16,8 @@ public class VotingService {
     public String enterCandidate(String name) {
         return votingRepository.enterCandidate(name);
     }
+
+    public String castVote(String name) {
+        return votingRepository.castVote(name);
+    }
 }

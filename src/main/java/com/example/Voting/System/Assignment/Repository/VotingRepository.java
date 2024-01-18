@@ -17,4 +17,14 @@ public class VotingRepository {
             return "Candidate " + name + " already exists!";
         }
     }
+
+    public String castVote(String name) {
+        if (candidateVotes.containsKey(name)) {
+            int currentVotes = candidateVotes.get(name);
+            candidateVotes.put(name, currentVotes + 1);
+            return "Vote cast successfully for candidate " + name + ". Total votes: " + (currentVotes + 1);
+        } else {
+            return "Invalid candidate name!";
+        }
+    }
 }
