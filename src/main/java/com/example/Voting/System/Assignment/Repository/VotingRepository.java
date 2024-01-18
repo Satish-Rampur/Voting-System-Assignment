@@ -39,4 +39,14 @@ public class VotingRepository {
     public Map<String, Integer> listVotes() {
         return candidateVotes;
     }
+
+    public String getWinner() {
+        Map.Entry<String, Integer> maxEntry = null;
+        for (Map.Entry<String, Integer> entry : candidateVotes.entrySet()) {
+            if (maxEntry == null || entry.getValue().compareTo(maxEntry.getValue()) > 0) {
+                maxEntry = entry;
+            }
+        }
+        return (maxEntry != null) ? "Winner: " + maxEntry.getKey() : "No winner yet!";
+    }
 }

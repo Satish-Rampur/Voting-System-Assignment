@@ -36,4 +36,9 @@ public class VotingController {
     public Map<String, Integer> listVotes() {
         return votingService.listVotes();
     }
+
+    @GetMapping("/getwinner")
+    public String getWinner() {
+        return votingService.getWinner();
+    }
 }

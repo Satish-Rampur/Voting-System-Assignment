@@ -30,4 +30,8 @@ public class VotingService {
     public Map<String, Integer> listVotes() {
         return votingRepository.listVotes();
     }
+
+    public String getWinner() {
+        return votingRepository.getWinner();
+    }
 }
