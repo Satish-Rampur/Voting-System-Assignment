@@ -27,4 +27,12 @@ public class VotingRepository {
             return "Invalid candidate name!";
         }
     }
+
+    public String countVote(String name) {
+        if (candidateVotes.containsKey(name)) {
+            return "Current vote count for candidate " + name + ": " + candidateVotes.get(name);
+        } else {
+            return "Invalid candidate name!";
+        }
+    }
 }

@@ -20,4 +20,8 @@ public class VotingService {
     public String castVote(String name) {
         return votingRepository.castVote(name);
     }
+
+    public String countVote(String name) {
+        return votingRepository.countVote(name);
+    }
 }
